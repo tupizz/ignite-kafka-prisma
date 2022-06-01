@@ -2,10 +2,21 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type GetUserQuery {
-  id: String!
+type Product {
+  id: ID!
+  title: String!
+  slug: String!
 }
 
 type Query {
-  getUser: GetUserQuery!
+  products: [Product!]!
+}
+
+type Mutation {
+  createProduct(data: CreateProductInput!): Product!
+}
+
+input CreateProductInput {
+  title: String!
+  slug: String!
 }
