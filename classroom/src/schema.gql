@@ -1,0 +1,11 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type GetUserQuery {
+  id: String!
+}
+
+type Query {
+  getUser: GetUserQuery!
+}
