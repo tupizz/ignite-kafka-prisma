@@ -22,4 +22,12 @@ export class CustomerService {
       },
     });
   }
+
+  getCustomerById(id: string) {
+    return this.prisma.customer.findUnique({
+      where: {
+        id,
+      },
+    });
+  }
 }

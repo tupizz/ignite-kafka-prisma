@@ -13,6 +13,7 @@ import { ProductsService } from 'src/http/services/products.service';
 import { PurchasesService } from 'src/http/services/purchases.service';
 import { AuthorizationGuard } from '../../auth/authorization.guard';
 import { CreatePurchaseInput } from '../inputs/create-purchase-input';
+import { Customer } from '../models/customer';
 import { Product } from '../models/product';
 import { Purchase } from '../models/purchase';
 
@@ -33,6 +34,11 @@ export class PurchasesResolver {
   @ResolveField('product', (returns) => Product)
   getProduct(@Parent() purchase: Purchase) {
     return this.productService.getProductById(purchase.productId);
+  }
+
+  @ResolveField('customer', (returns) => Customer)
+  getCustomer(@Parent() purchase: Purchase) {
+    return this.customerService.getCustomerById(purchase.customerId);
   }
 
   @Mutation(() => Purchase)

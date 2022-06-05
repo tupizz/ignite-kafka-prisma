@@ -10,11 +10,10 @@ type Product {
 
 type Purchase {
   id: ID!
-  title: String!
   status: PurchaseStatus!
-  slug: String!
   createdAt: DateTime!
   product: Product!
+  customer: Customer!
 }
 
 """Available purchase status"""
