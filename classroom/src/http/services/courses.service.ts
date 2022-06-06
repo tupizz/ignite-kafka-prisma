@@ -30,6 +30,14 @@ export class CoursesService {
     });
   }
 
+  findBySlug(slug: string) {
+    return this.prisma.course.findUnique({
+      where: {
+        slug,
+      },
+    });
+  }
+
   findCourseById(id: string) {
     return this.prisma.course.findUnique({
       where: {

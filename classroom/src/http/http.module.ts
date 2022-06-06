@@ -30,5 +30,6 @@ import { EnrollmentService } from './services/enrollments.service';
     EnrollmentService,
     EnrollmentResolver,
   ],
+  exports: [CoursesService, StudentsService, EnrollmentService],
 })
 export class HttpModule {}
